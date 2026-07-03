@@ -21,7 +21,7 @@ export default function Button({
     <button
       type="button"
       onClick={onClick}
-      className="border-2 border-transparent bg-cover bg-center px-8 py-3 font-semibold text-black tracking-wide transition-transform duration-150 active:scale-95 hover:brightness-110"
+      className="relative border-2 border-transparent bg-cover bg-center px-8 py-3 font-semibold text-black tracking-wide transition-transform duration-150 active:scale-95 hover:brightness-110"
       style={{
         width,
         height,
@@ -35,7 +35,27 @@ export default function Button({
           "0 2px 6px rgba(0,0,0,0.4), inset 0 0 0 2px rgba(0,0,0,0.85)",
       }}
     >
-      {title}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 bg-no-repeat mix-blend-screen"
+        style={{
+          top: "-4px",
+          backgroundImage: "url(/light.png)",
+          backgroundSize: "144px 144px",
+          backgroundPosition: "50% 47%",
+        }}
+      />
+      <span
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 h-8 w-8 -translate-x-1/2 translate-y-1/2 rotate-180 bg-no-repeat mix-blend-screen"
+        style={{
+          bottom: "-4px",
+          backgroundImage: "url(/light.png)",
+          backgroundSize: "144px 144px",
+          backgroundPosition: "50% 47%",
+        }}
+      />
+      <span className="relative">{title}</span>
     </button>
   );
 }
