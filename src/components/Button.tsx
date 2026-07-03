@@ -37,22 +37,30 @@ export default function Button({
     >
       <span
         aria-hidden
-        className="pointer-events-none absolute left-1/2 h-8 w-8 -translate-x-1/2 -translate-y-1/2 bg-no-repeat mix-blend-screen"
+        className="pointer-events-none absolute h-8 w-8 -translate-x-1/2 -translate-y-1/2 bg-no-repeat mix-blend-screen"
         style={{
-          top: "-4px",
           backgroundImage: "url(/light.png)",
           backgroundSize: "144px 144px",
-          backgroundPosition: "50% 47%",
+          backgroundPosition: "50% 50%",
+          animationName: "orbit-ccw, twinkle",
+          animationDuration: "6s, 1.4s",
+          animationTimingFunction: "linear, ease-in-out",
+          animationIterationCount: "infinite, infinite",
+          animationDelay: "0s, 0s",
         }}
       />
       <span
         aria-hidden
-        className="pointer-events-none absolute left-1/2 h-8 w-8 -translate-x-1/2 translate-y-1/2 rotate-180 bg-no-repeat mix-blend-screen"
+        className="pointer-events-none absolute h-8 w-8 -translate-x-1/2 -translate-y-1/2 bg-no-repeat mix-blend-screen"
         style={{
-          bottom: "-4px",
           backgroundImage: "url(/light.png)",
           backgroundSize: "144px 144px",
-          backgroundPosition: "50% 47%",
+          backgroundPosition: "50% 50%",
+          animationName: "orbit-ccw, twinkle",
+          animationDuration: "6s, 1.4s",
+          animationTimingFunction: "linear, ease-in-out",
+          animationIterationCount: "infinite, infinite",
+          animationDelay: "-3s, -0.7s",
         }}
       />
       <span className="relative">{title}</span>
